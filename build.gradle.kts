@@ -6,16 +6,15 @@ plugins {
 catalog {
     versionCatalog {
         from(files("centralized.version.catalog.toml"))
-
     }
 }
 
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.simonchius.android"
-            artifactId = "version.catalog"
-            version = "1.1.0"
+            groupId = "com.github"
+            artifactId = "version-catalog"
+            version = "0.1.0"
             from(components["versionCatalog"])
         }
     }
@@ -25,8 +24,8 @@ publishing {
             url = uri("https://maven.pkg.github.com/simonchius/Centralized-Version-Catalog")
             credentials {
                 credentials {
-                    username = System.getenv("USER_GITHUB_ID") ?: System.getProperty("USER_GITHUB_ID")
-                    password = System.getenv("USER_GITHUB_ACCESS_TOKEN") ?: System.getProperty("USER_GITHUB_ACCESS_TOKEN")
+                    username = ""
+                    password = System.getenv("GH_TOKEN")!!
                 }
             }
         }

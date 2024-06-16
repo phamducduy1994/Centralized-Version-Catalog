@@ -23,13 +23,9 @@ jobs:
         # You may pin to the exact commit or the version.
         # uses: gradle/wrapper-validation-action@9ba54b687bf0f59b62abbf91e0d60de082e8ebc4
         uses: gradle/wrapper-validation-action@v3.4.1
-        with:
-          # Minimum number expected gradle-wrapper.jar files found in the repository. Non-negative number. Higher number is useful in monorepos where each project might have their own wrapper.
-          min-wrapper-count: 1
           
-
       - name: Build with Gradle
-        run: gradle build
+        run: ./gradlew build
 
       - name: Cache Gradle Caches
         uses: gradle/gradle-build-action@v2

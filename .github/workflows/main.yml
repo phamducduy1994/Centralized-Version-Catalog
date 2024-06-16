@@ -1,0 +1,22 @@
+name: Publish to Github Packages
+
+# add code to trigger the workflow manually
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  gradle:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+      - name: Cache Gradle Caches
+        uses: gradle/gradle-build-action@v2
+      - name: Publish to Github Packages
+        run: ./gradlew publishAllPublicationsToGithubPackagesRepository
+        if: success()

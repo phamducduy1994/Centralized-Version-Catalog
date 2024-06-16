@@ -21,7 +21,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/simonchius/Centralized-Version-Catalog")
+            url = uri("https://maven.pkg.github.com/phamducduy1994/Centralized-Version-Catalog")
             credentials {
                 credentials {
                     username = ""

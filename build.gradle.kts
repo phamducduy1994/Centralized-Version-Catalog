@@ -14,7 +14,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.github"
             artifactId = "version-catalog"
-            version = "0.1.0"
+            version = "0.0.0-semantic-release"
             from(components["versionCatalog"])
         }
     }

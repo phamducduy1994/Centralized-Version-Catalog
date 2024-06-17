@@ -1,0 +1,24 @@
+name: All Publish
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - "main"
+    paths:
+    - "*"
+jobs:
+  call-kmmbridge-publish:
+    permissions:
+      contents: write
+      packages: write
+    uses: phamducduy1994/Centralized-Version-Catalog/.github/workflows/kmmbridge.yml@main
+    with:
+      jvmVersion: 21
+      versionBaseProperty: LIBRARY_VERSION
+      publishTask: 
+        kmmBridgePublish 
+        publishKotlinMultiplatformPublicationToGitHubPackagesRepository 
+        publishAndroidDebugPublicationToGitHubPackagesRepository 
+        publishAndroidReleasePublicationToGitHubPackagesRepository
+#    secrets:
+#      PODSPEC_SSH_KEY: ${{ secrets.PODSPEC_SSH_KEY }}

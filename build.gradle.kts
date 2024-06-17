@@ -10,11 +10,17 @@ catalog {
 }
 
 publishing {
+    // check if in CI
+    if (System.getenv("CI") != "true") return@publishing
+
     publications {
         create<MavenPublication>("maven") {
             groupId = "com.github"
             artifactId = "version-catalog"
-            version = "0.1.0"
+            // get gradle property "AUTO_VERSION"
+            val autoVersion = project.properties["AUTO_VERSION"]
+                ?: throw GradleException("AUTO_VERSION is not set")
+            version = autoVersion as String
             from(components["versionCatalog"])
         }
     }
@@ -25,7 +31,18 @@ publishing {
             credentials {
                 credentials {
                     username = ""
-                    password = System.getenv("GH_TOKEN")!!
+                    var pwd = System.getenv("GH_TOKEN")!!
+
+                    if (pwd.length < 40) {
+                        println("GH_TOKEN is not set, try to get from gradle property")
+                        pwd = project.properties["GITHUB_PUBLISH_TOKEN"] as String
+                    }
+
+                    // validate token
+                    require(pwd.length == 40) {
+                        "GitHub token is invalid: length = ${pwd.length} != 40"
+                    }
+                    password = pwd
                 }
             }
         }

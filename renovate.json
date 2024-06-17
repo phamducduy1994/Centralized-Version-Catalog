@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":disableRateLimiting"
+  ],
+  "packageRules": [
+    {
+      "description": "Group together all Jetpack Compose components",
+      "matchPackagePrefixes": [
+        "androidx.compose:",
+        "androidx.compose.animation:",
+        "androidx.compose.foundation:",
+        "androidx.compose.material:",
+        "androidx.compose.material3:",
+        "androidx.compose.runtime:",
+        "androidx.compose.ui:"
+      ],
+      "groupName": "compose-bom"
+    },
+    {
+      "groupName": "Firebase",
+      "groupSlug": "firebase",
+      "matchPackagePrefixes": ["com.google.firebase"]
+    },
+    {
+      "description": "Configure repository for Google's plugins",
+      "matchDepTypes": ["plugin"],
+      "matchPackagePrefixes": ["androidx.", "com.google."],
+      "registryUrls": ["https://dl.google.com/android/maven2"]
+    },
+    {
+      "description": "Dagger",
+      "matchPackagePrefixes": ["com.google.dagger"],
+      "registryUrls": ["https://repo.maven.apache.org/maven2"]
+    }
+  ]
+}

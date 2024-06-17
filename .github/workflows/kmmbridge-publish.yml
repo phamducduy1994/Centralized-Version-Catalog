@@ -1,0 +1,26 @@
+name: All Publish
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - "main"
+    paths:
+    - "*"
+
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+jobs:
+  call-kmmbridge-publish:
+    permissions:
+      contents: write
+      packages: write
+    uses: phamducduy1994/Centralized-Version-Catalog/.github/workflows/kmmbridge.yml@main
+    with:
+      runsOn: 'macos-latest'
+      jvmVersion: 21
+      versionBaseProperty: LIBRARY_VERSION
+      publishTask: publishAllPublicationsToGitHubPackagesRepository
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    #   PODSPEC_SSH_KEY: ${{ secrets.PODSPEC_SSH_KEY }}

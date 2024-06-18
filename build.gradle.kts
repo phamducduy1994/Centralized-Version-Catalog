@@ -5,7 +5,7 @@ plugins {
 
 catalog {
     versionCatalog {
-        from(files("centralized.version.catalog.toml"))
+        from(files("libs.versions.toml"))
     }
 }
 

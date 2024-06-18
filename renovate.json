@@ -1,9 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":disableRateLimiting"
-  ],
+  "extends": ["config:recommended", ":dependencyDashboard"],
   "packageRules": [
     {
       "description": "Group together all Jetpack Compose components",

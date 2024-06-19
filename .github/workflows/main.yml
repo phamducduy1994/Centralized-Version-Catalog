@@ -31,7 +31,7 @@ jobs:
         run: ./gradlew build
 
       - name: Cache Gradle Caches
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         
       - name: Publish to Github Packages
         run: ./gradlew publishAllPublicationsToGithubPackagesRepository

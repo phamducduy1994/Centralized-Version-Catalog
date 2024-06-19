@@ -21,6 +21,16 @@
       "matchPackagePrefixes": ["com.google.firebase"]
     },
     {
+      "description": "Configure repository for Google's plugins",
+      "matchDepTypes": ["plugin"],
+      "matchPackagePrefixes": [
+        "androidx.",
+        "com.google.",
+        "com.android"
+      ],
+      "registryUrls": ["https://dl.google.com/android/maven2"]
+    },
+    {
       "description": "Automatically merge minor and patch-level updates",
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "automerge": true,

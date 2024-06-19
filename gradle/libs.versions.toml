@@ -25,7 +25,7 @@ navigation-ui-ktx = "2.6.0"
 
 [libraries]
 
-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.9.0" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.13.1" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }

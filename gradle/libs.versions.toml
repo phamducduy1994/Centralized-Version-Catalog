@@ -21,7 +21,7 @@ appcompat = "1.6.1"
 material = "1.9.0"
 constraintlayout = "2.1.4"
 navigation-fragment-ktx = "2.6.0"
-navigation-ui-ktx = "2.6.0"
+navigation-ui-ktx = "2.7.7"
 
 [libraries]
 

@@ -22,7 +22,7 @@ jobs:
       - name: Gradle Wrapper Validation
         # You may pin to the exact commit or the version.
         # uses: gradle/wrapper-validation-action@9ba54b687bf0f59b62abbf91e0d60de082e8ebc4
-        uses: gradle/wrapper-validation-action@v3.4.1
+        uses: gradle/wrapper-validation-action@v3.4.2
 
       - name: add permission
         run: chmod +x gradlew

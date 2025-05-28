@@ -5,7 +5,7 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
 [versions]
 
-agp = "8.5.2"
+agp = "8.10.1"
 kotlin = "2.0.10"
 core-ktx = "1.13.1"
 junit = "4.13.2"
